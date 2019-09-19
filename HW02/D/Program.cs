@@ -19,10 +19,16 @@ namespace D
                 Console.Write("Enter a number: ");
                 int n = int.Parse(Console.ReadLine());
                 i++;
-                int n2 = n;
+                int prev=0;
                 if (n == 0) sum0 += 1;
                 if (n % 2 == 0) evenint += 1;
-                if (n2 < n) asc = false;
+
+                if (n > prev && asc)
+                {
+                    prev = n;
+                }
+                else asc = false;
+
                 if (n < min) min = n;
                 if (n > max) max = n;
                 
